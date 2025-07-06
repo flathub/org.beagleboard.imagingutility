@@ -14,7 +14,6 @@ build-options:
 finish-args:
   - --share=ipc
   - --share=network
-  - --filesystem=xdg-download
   - --socket=wayland
   - --socket=fallback-x11
   # SD Card permissions
