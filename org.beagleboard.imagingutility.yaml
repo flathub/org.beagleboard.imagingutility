@@ -37,8 +37,8 @@ modules:
         $FLATPAK_DEST/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/v0.0.11.tar.gz
-        sha256: 693f1cebb5c7520d4fa32ec92492c9a82d06df3d9037b4bb289329c367e29957
+        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/v0.0.12.tar.gz
+        sha256: 3f639a3d841c917e40a709ec9538e35d3bc3a8d80a4832f579c52bc9750ddbd3
         x-checker-data:
           type: json
           url: https://api.github.com/repos/beagleboard/bb-imager-rs/releases/latest
