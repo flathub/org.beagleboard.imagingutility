@@ -37,8 +37,8 @@ modules:
         $FLATPAK_DEST/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/v0.0.14.tar.gz
-        sha256: 8977ac228248da81df0072147d332f98120b5b801f7b8a0a57f3c8bdf8fac6d9
+        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/v0.0.15.tar.gz
+        sha256: d0f517a7c77dc6963aebb5ec1d8085565559e0a153871ad467d824fd46718a6f
         x-checker-data:
           type: json
           url: https://api.github.com/repos/beagleboard/bb-imager-rs/releases/latest
@@ -46,8 +46,8 @@ modules:
           url-query: '@uri "https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/\(.tag_name).tar.gz"'
           timestamp-query: .published_at
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/releases/download/v0.0.14/cargo-vendor.tar.gz
-        sha256: c13dd80f53756b871d00d03f737f4859dfd8b3ad0c972337bcd3249f9d7a610f
+        url: https://github.com/beagleboard/bb-imager-rs/releases/download/v0.0.15/cargo-vendor.tar.gz
+        sha256: 2d7a2eec16d065ebaf5cd51cfcdb5f1c5f27a6979ac48af803ad6c3f9de15e44
         dest: vendor
         x-checker-data:
           type: json
