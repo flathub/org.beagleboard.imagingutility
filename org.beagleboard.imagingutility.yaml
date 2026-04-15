@@ -1,13 +1,15 @@
 id: org.beagleboard.imagingutility
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
+  - org.freedesktop.Sdk.Extension.llvm22
 command: bb-imager-gui
 
 build-options:
-  append-path: /usr/lib/sdk/rust-stable/bin
+  append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm22/bin"
+  prepend-ld-library-path: /usr/lib/sdk/llvm22/lib
   env:
     CARGO_HOME: /run/build/bb-imager-gui/cargo
 
@@ -25,16 +27,7 @@ modules:
   - name: bb-imager-gui
     buildsystem: simple
     build-commands:
-      - cargo --offline fetch --verbose --manifest-path bb-imager-gui/Cargo.toml
-      - cargo --offline build --release --verbose -p bb-imager-gui -F bcf_cc1352p7
-        -F bcf_msp430
-      - install -Dm755 ./target/release/bb-imager-gui -t /app/bin/
-      - install -Dm644 ./bb-imager-gui/assets/packages/linux/BeagleBoardImager.desktop
-        /app/share/applications/${FLATPAK_ID}.desktop
-      - desktop-file-edit --set-icon=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm644 ./bb-imager-gui/assets/icons/icon.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
-      - install -Dm644 ./bb-imager-gui/assets/packages/linux/flatpak/org.beagleboard.imagingutility.metainfo.xml
-        $FLATPAK_DEST/share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - make package-gui-flatpak VERBOSE=1
     sources:
       - type: archive
         url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/1.0.0.tar.gz
