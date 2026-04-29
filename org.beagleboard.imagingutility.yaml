@@ -8,7 +8,7 @@ sdk-extensions:
 command: bb-imager-gui
 
 build-options:
-  append-path: "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm22/bin"
+  append-path: /usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm22/bin
   prepend-ld-library-path: /usr/lib/sdk/llvm22/lib
   env:
     CARGO_HOME: /run/build/bb-imager-gui/cargo
@@ -30,8 +30,8 @@ modules:
       - make package-gui-flatpak VERBOSE=1
     sources:
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/1.0.0.tar.gz
-        sha256: e24d29d4bd41aa4f637e5cb10b70db68f533577e64b23719a722571ba31f3627
+        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/1.0.1.tar.gz
+        sha256: dc7737ae086bf6ee8850a71c09b4d57371cb37a096119a91d27c629f2309b439
         x-checker-data:
           type: json
           url: https://api.github.com/repos/beagleboard/bb-imager-rs/releases/latest
@@ -39,8 +39,8 @@ modules:
           url-query: '@uri "https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/\(.tag_name).tar.gz"'
           timestamp-query: .published_at
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.0/cargo-vendor.tar.gz
-        sha256: ca6d5f8a0d0c8d5b41bc2c6f14e8fc26432a024e5231a665392f9f82032d8783
+        url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.1/cargo-vendor.tar.gz
+        sha256: d18adacc897e8c1dc1c1967fc3f4438f7fd72e3766b7c451c8c24e66c4bba4f2
         dest: vendor
         x-checker-data:
           type: json
