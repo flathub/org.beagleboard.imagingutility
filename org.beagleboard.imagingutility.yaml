@@ -27,7 +27,7 @@ modules:
   - name: bb-imager-gui
     buildsystem: simple
     build-commands:
-      - make package-gui-flatpak VERBOSE=1
+      - make package-gui-flatpak VERBOSE=1 PRE_RELEASE=0
     sources:
       - type: archive
         url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/1.0.8.tar.gz
