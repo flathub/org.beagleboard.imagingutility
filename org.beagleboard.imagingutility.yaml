@@ -39,8 +39,8 @@ modules:
           url-query: '@uri "https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/\(.tag_name).tar.gz"'
           timestamp-query: .published_at
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.8/cargo-vendor.tar.zst
-        sha256: 1294e5345d4d3e6f1c4559d0438a9fd028b721263d8c45a530b77280a98da79a
+        url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.10/cargo-vendor.tar.zst
+        sha256: c7e74dc62f181966d29e7cd10719e63d440f63b56ff36a94296977e9113d6154
         dest: vendor
         x-checker-data:
           type: json
