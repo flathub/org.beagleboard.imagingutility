@@ -41,13 +41,10 @@ modules:
       - type: archive
         url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.11/cargo-vendor.tar.zst
         sha256: 94ef4a01c4dce3ac9b81a14ba7eb5c6ff090edc3524c1b67a64d3dd9232f4efd
-        dest: vendor
         x-checker-data:
           type: json
           url: https://api.github.com/repos/beagleboard/bb-imager-rs/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: '@uri "https://github.com/beagleboard/bb-imager-rs/releases/download/\(.tag_name)/cargo-vendor.tar.zst"'
           timestamp-query: .published_at
-      - type: file
-        path: config.toml
-        dest: .cargo/
+        strip-components: 0
