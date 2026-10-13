@@ -30,8 +30,8 @@ modules:
       - make package-gui-flatpak VERBOSE=1 PRE_RELEASE=0
     sources:
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/1.0.19.tar.gz
-        sha256: 01d704e5bbce69c4b3688be31778ce2d26c2d20563308527f158013af280b9f5
+        url: https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/1.0.20.tar.gz
+        sha256: 1efdbde3e56bc2ebd66c5939a440f4a2fc015996068615eafc03f6d71f4dd0d8
         x-checker-data:
           type: json
           url: https://api.github.com/repos/beagleboard/bb-imager-rs/releases/latest
@@ -39,8 +39,8 @@ modules:
           url-query: '@uri "https://github.com/beagleboard/bb-imager-rs/archive/refs/tags/\(.tag_name).tar.gz"'
           timestamp-query: .published_at
       - type: archive
-        url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.19/cargo-vendor.tar.zst
-        sha256: 3b5845908928e0034992a5247ba3c2c926388f86e32aab39f1f2d468baacccc7
+        url: https://github.com/beagleboard/bb-imager-rs/releases/download/1.0.20/cargo-vendor.tar.zst
+        sha256: 8d2f77e868b2178a3206202aeab97c1bbea64646cb384a4201c271b61a97272b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/beagleboard/bb-imager-rs/releases/latest
